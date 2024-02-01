@@ -8,7 +8,7 @@ def hello_world():
 
 def sanitize_input(input_string):
     # Check for SQL injection characters using a safer approach
-    if re.search(r'[\'"\\;]', input_string):
+    if re.search(r'[\'"\\;()+*%]', input_string):
         return 'unsanitized'
     else:
         return 'sanitized'

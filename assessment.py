@@ -7,13 +7,13 @@ def hello_world():
     return 'Hello, World!'
 
 def sanitize_input(input_string):
-    # Check for SQL injection characters using a safer approach
+    
     if re.search(r'[\'"\\;()+*%]', input_string):
         return 'unsanitized'
     else:
         return 'sanitized'
 
-# Route for the API endpoint
+
 @app.route('/v1/sanitized/input/', methods=['POST'])
 def check_sanitization():
     data = request.get_json()
